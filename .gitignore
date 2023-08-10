@@ -1,1 +1,4 @@
-/emoticonTemp/@eaDir
+emoticonTemp/@eaDir
+keys.py
+chromedriver*
+venv*
