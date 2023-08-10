@@ -1,14 +1,10 @@
-from telegram.ext import CommandHandler, Dispatcher, Filters, MessageHandler, Updater
-import telegram
+from telegram.ext import CommandHandler, Updater
 
 from PIL import Image
 
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
 
 from bs4 import BeautifulSoup
-import requests
 import urllib.request
 
 import datetime
@@ -132,7 +128,7 @@ def scrollDownAllTheWay(driver):
             break
     return True
 
-
+start_handler = CommandHandler("start", startBot)
 create_handler = CommandHandler("create", createEmoticon)
 help_handler = CommandHandler("help", helpMenu)
 
