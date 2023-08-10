@@ -111,6 +111,11 @@ def startBot(update, context):
         chat_id=update.effective_chat.id, text="Bot Started!")
 
 
+def stopBot(update, context):
+    updater.stop()
+    updater.is_idle = False
+
+
 def scrollDown(driver, value):
     driver.execute_script("window.scrollBy(0,"+str(value)+")")
 
@@ -128,11 +133,11 @@ def scrollDownAllTheWay(driver):
             break
     return True
 
+
 if __name__ == "__main__":
     start_handler = CommandHandler("start", startBot)
     create_handler = CommandHandler("create", createEmoticon)
     help_handler = CommandHandler("help", helpMenu)
-
 
     dispatcher.add_handler(create_handler)
     dispatcher.add_handler(help_handler)
