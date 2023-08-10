@@ -1,3 +1,4 @@
+import signal
 from telegram.ext import CommandHandler, Updater
 
 from PIL import Image
@@ -114,6 +115,7 @@ def startBot(update, context):
 def stopBot(update, context):
     updater.stop()
     updater.is_idle = False
+    os.kill(os.getpid(), signal.SIGINT)
 
 
 def scrollDown(driver, value):
