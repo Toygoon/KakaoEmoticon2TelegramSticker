@@ -128,13 +128,14 @@ def scrollDownAllTheWay(driver):
             break
     return True
 
-start_handler = CommandHandler("start", startBot)
-create_handler = CommandHandler("create", createEmoticon)
-help_handler = CommandHandler("help", helpMenu)
+if __name__ == "__main__":
+    start_handler = CommandHandler("start", startBot)
+    create_handler = CommandHandler("create", createEmoticon)
+    help_handler = CommandHandler("help", helpMenu)
 
 
-dispatcher.add_handler(create_handler)
-dispatcher.add_handler(help_handler)
-dispatcher.add_handler(start_handler)
+    dispatcher.add_handler(create_handler)
+    dispatcher.add_handler(help_handler)
+    dispatcher.add_handler(start_handler)
 
-updater.start_polling()
+    updater.start_polling()
